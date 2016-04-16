@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--主页-->
@@ -51,8 +52,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="383" height="38"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NGB-dS-9Fb">
-                                <rect key="frame" x="0.0" y="0.0" width="347" height="38"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NGB-dS-9Fb">
+                                <rect key="frame" x="-4" y="0.0" width="387" height="38"/>
                                 <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="z9h-Nv-yDJ">
                                     <size key="itemSize" width="56" height="43"/>
@@ -68,7 +69,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="56" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWt-uA-CJd">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWt-uA-CJd">
                                                     <rect key="frame" x="0.0" y="0.0" width="56" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="Button"/>
@@ -76,6 +77,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="yWt-uA-CJd" firstAttribute="leading" secondItem="UCA-WF-Y3B" secondAttribute="leading" id="WTD-kP-ugW"/>
+                                            <constraint firstItem="yWt-uA-CJd" firstAttribute="top" secondItem="UCA-WF-Y3B" secondAttribute="top" id="Woy-cM-jf2"/>
+                                            <constraint firstAttribute="trailing" secondItem="yWt-uA-CJd" secondAttribute="trailing" id="XsW-cd-i0C"/>
+                                            <constraint firstAttribute="bottom" secondItem="yWt-uA-CJd" secondAttribute="bottom" id="gLZ-yo-dYF"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -83,14 +90,26 @@
                                     <outlet property="delegate" destination="TBH-fQ-Wtd" id="1x9-JE-2fg"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvT-Ed-0Fe">
-                                <rect key="frame" x="345" y="0.0" width="30" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvT-Ed-0Fe">
+                                <rect key="frame" x="353" y="0.0" width="30" height="38"/>
                                 <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="CWq-kN-I3r"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="＋"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KvT-Ed-0Fe" secondAttribute="trailing" id="5v0-C1-9FJ"/>
+                            <constraint firstItem="KvT-Ed-0Fe" firstAttribute="top" secondItem="NGB-dS-9Fb" secondAttribute="top" id="7Ry-yV-pqq"/>
+                            <constraint firstItem="KvT-Ed-0Fe" firstAttribute="trailing" secondItem="NGB-dS-9Fb" secondAttribute="trailing" id="Qvp-X4-vBs"/>
+                            <constraint firstItem="NGB-dS-9Fb" firstAttribute="leading" secondItem="oHS-ZI-Syu" secondAttribute="leadingMargin" constant="-20" id="Tkj-KL-PMT"/>
+                            <constraint firstItem="KvT-Ed-0Fe" firstAttribute="height" secondItem="oHS-ZI-Syu" secondAttribute="height" id="mk0-yq-FLE"/>
+                            <constraint firstItem="NGB-dS-9Fb" firstAttribute="top" secondItem="hph-PM-1d9" secondAttribute="bottom" id="pbd-aZ-0c1"/>
+                            <constraint firstItem="NGB-dS-9Fb" firstAttribute="height" secondItem="oHS-ZI-Syu" secondAttribute="height" id="vcC-PL-602"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="_collectionView" destination="NGB-dS-9Fb" id="7D3-oU-LyE"/>
